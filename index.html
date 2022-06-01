@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <title>Document</title>
   <style>
+    #header {
+      z-index: 2;
+    }
+
+
     #articles .row>div {
       padding: 0;
     }
@@ -25,32 +30,30 @@
 
 <body>
   <div id="main">
-    <div id="header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">泰山咖啡莊園</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">菜單餐點</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">周邊景點</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">莊園位置</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">聯絡我們</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">咖啡故事</a>
-              </li>
-            </ul>
-          </div>
+    <div id="header" class=" position-fixed  w-100">
+      <nav class="navbar navbar-dark navbar-expand-lg bg-dark px-4">
+        <a class="navbar-brand" href="#">泰山咖啡莊園</a>
+        <button class="navbar-toggler btn " type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">菜單餐點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">周邊景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">莊園位置</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">聯絡我們</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">咖啡故事</a>
+            </li>
+          </ul>
         </div>
       </nav>
     </div>
@@ -87,8 +90,8 @@
         </button>
       </div>
     </div>
-    <div id="intro" class="container " style="margin:180px auto">
-      <div class="row align-items-center">
+    <div id="intro" class="container my-lg-5 my-3">
+      <div class="row align-items-center ">
         <div class="col-12 col-lg-4">
           <div class="card ">
             <img src="https://picsum.photos/300/200/?random=2" class="card-img-top" alt="...">
@@ -123,10 +126,10 @@
     </div>
     <div id="articles" class="container ">
       <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
           <img src="https://picsum.photos/300/200/?random=8" class="card-img-top" alt="...">
         </div>
-        <div class="col-6 pt-5" style="background:#eee">
+        <div class="col-12 col-lg-6 pt-5" style="background:#ddd">
           <div class="d-flex flex-column p-3 align-items-center">
             <h1 class="card-title">制度排名拍攝</h1>
             <p class="card-text text-center">
@@ -137,10 +140,10 @@
         </div>
       </div>
       <div class="row flex-row-reverse">
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
           <img src="https://picsum.photos/300/200/?random=9" class="card-img-top" alt="...">
         </div>
-        <div class="col-6 pt-5" style="background:#eee">
+        <div class="col-12 col-lg-6 pt-5" style="background:#ddd">
           <div class="d-flex flex-column p-3 align-items-center">
             <h1 class="card-title">制度排名拍攝</h1>
             <p class="card-text text-center">
@@ -166,7 +169,18 @@
         <form class="row g-6">
           <div class="col-md-6 col-12">
             <label for="inputEmail4" class="form-label">姓名</label>
-            <input type="email" class="form-control" id="inputEmail4">
+
+            <div class="input-group">
+              <input type="email" class="form-control" id="inputEmail4">
+
+              <div class="input-group-text">
+                <span class="me-2">先生</span>
+                <input class="form-check-input mt-0 me-4" type="radio" value="" name="gender">
+                <span class="me-2">女士</span>
+                <input class="form-check-input mt-0" type="radio" value="" name="gender">
+              </div>
+
+            </div>
           </div>
           <div class="col-md-6 col-12">
             <label for="inputPassword4" class="form-label">電話</label>
@@ -178,7 +192,12 @@
           </div>
           <div class="col-md-6 col-12">
             <label for="inputAddress2" class="form-label">問題類型</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            <select id="inputAddress2" class="form-select">
+              <option selected>餐飲建議</option>
+              <option value="1">稱讚</option>
+              <option value="2">客訴</option>
+              <option value="3">其他</option>
+            </select>
           </div>
           <div class="col-12">
             <label for="inputCity" class="form-label">意見需求</label>
